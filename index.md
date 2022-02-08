@@ -11,3 +11,5 @@
 * [NetToBOM](https://github.com/Len42/NetToBOM) &mdash; This is my KiCad BOM plug-in. There are many like it but this one is mine. &mdash; **completed**
 
 * [MakeVersionInfo](https://github.com/Len42/MakeVersionInfo) &mdash; Microsoft Visual Studio utility to automatically update a project's version number &mdash; **completed**
+
+{% include footer.html %}
