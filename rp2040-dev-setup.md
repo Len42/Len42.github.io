@@ -2,6 +2,8 @@
 
 Here is how to install and configure a C/C++ development environment for the Raspberry Pi Pico and other RP2040 dev boards, using the Raspberry Pi Pico SDK and Visual Studio Code on Windows. All of the software except Windows is available at no cost.
 
+This is a fairly involved process. For a simpler solution, you may wish to use the [Arduino](https://www.arduino.cc/) IDE which supports RP2040 boards using the Mbed OS.
+
 _Note:_ These instructions are up to date as of 2022-02-10.
 
 ## Acknowledgements
