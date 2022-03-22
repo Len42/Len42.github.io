@@ -27,12 +27,7 @@ _Note:_ In the installer, select "Add path to environment variable".
 
 ## CMake
 
-_Note:_ As of this writing, the current version of CMake (3.23.0) does not work properly with this build environment. An older version of CMake must be used.
-
-<s>Go to the CMake download page: [https://cmake.org/download/](https://cmake.org/download/). Download the 64-bit Windows installer.</s>
-
-Download version 3.19.6 of CMake for Windows from this link:
-[https://cmake.org/files/v3.19/cmake-3.19.6-win32-x86.msi](https://cmake.org/files/v3.19/cmake-3.19.6-win32-x86.msi)
+Go to the CMake download page: [https://cmake.org/download/](https://cmake.org/download/). Download the 64-bit Windows installer.
 
 Run the installer.
 
