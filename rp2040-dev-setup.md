@@ -4,7 +4,7 @@ Here is how to install and configure a C/C++ development environment for the Ras
 
 This is a fairly involved process. For a simpler solution, you may wish to use the [Arduino](https://www.arduino.cc/) IDE which supports RP2040 boards using the Mbed OS.
 
-_Note:_ These instructions are up to date as of 2022-02-10.
+_Note:_ These instructions are up to date as of 2022-04-24.
 
 ## Acknowledgements
 
@@ -17,11 +17,12 @@ These instructions mostly follow these video tutorials by "Learn Embedded System
 
 ## ARM GCC Compiler
 
-Go to the download page for the GNU-RM Embedded Toolchain:
+Go to the download page for the Arm GNU Toolchain:
 
-[https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
+[https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads)
 
-Download the Windows installer and run it.
+Locate the download for Windows host and AArch32 bare-metal target (arm-none-eabi).
+Download the installer and run it.
 
 _Note:_ In the installer, select "Add path to environment variable".
 
@@ -33,24 +34,15 @@ Run the installer.
 
 _Note:_ In the installer, select "Add Cmake to the system PATH for all users".
 
-## VS 2019 C++ Build Tools
+## Visual Studio Build Tools
 
-_Note:_ Not required if a full version of Visual Studio 2019 is already installed.
+There are two ways to install the Visual Studio Build Tools. Either:
 
-_Note:_ Not tested with Visual Studio 2022.
+- Install the "Build Tools for Visual Studio" package. It seems that Microsoft no longer supports this package, but as of now the 2019 version is available here: [https://aka.ms/vs/16/release/vs_buildtools.exe](https://aka.ms/vs/16/release/vs_buildtools.exe)
 
-Go to the Visual Studio download page: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+Or:
 
-Scroll down and unhide things to find the "Build Tools for Visual Studio" download.
-
-_Note:_ A complete version of Visual Studio may be used instead, but be sure to select a 
-download that includes the C++ tools.
-
-Download and run the installer.
-
-In the installer, select the "C++ build tools".
-
-_Note:_ This will take a long time to install.
+- Download Visual Studio 2022 Community Edition from here: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/). Be sure to install the C++ development tools. This is a much larger install. Visual Studio 2019 will also work, if you have that already.
 
 ## Python 3
 
@@ -176,7 +168,7 @@ Save and close the settings file.
 
 In VS Code, open the folder `pico_examples`.
 
-If prompted to select a compiler, select the one that has "GCC for arm" in its name. If not prompted and if "No kit selected" is shown at the bottom of the window, click on that and select "GCC for arm".
+If prompted to select a compiler, select the one that has "arm-none-eabi" in its name. If not prompted and if "No kit selected" is shown at the bottom of the window, click on that and select "arm-none-eabi".
 
 Click the "Build" button at the bottom of the window to build the example programs again.
 
