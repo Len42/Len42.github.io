@@ -112,10 +112,8 @@ Build the Pico example projects:
     mkdir build
     cd build
     cmake -G "NMake Makefiles" ..
-    Or, if using an RP2040 board other than the Pi Pico (see 
-    src\boards\include\boards):
-    Cmake -D"PICO_BOARD=adafruit_feather_rp2040" -G "NMake Makefiles" 
-    ..
+        Or, if using an RP2040 board other than the Pi Pico (see src\boards\include\boards):
+        Cmake -D"PICO_BOARD=adafruit_feather_rp2040" -G "NMake Makefiles" ..
     nmake
 
 _Note:_ This will take a long time.
