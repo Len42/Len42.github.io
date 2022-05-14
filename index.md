@@ -2,7 +2,9 @@
 
 ## Recent Projects
 
-[Synth](/Synth/) &mdash; Designs for Eurorack synthesizer modules &mdash; **active**
+[Synth](/Synth/) &mdash; Designs for Eurorack synthesizer modules &mdash; _work in progress_
+
+[Op Amp Tester](/OpAmpTester/) &mdash; Tests op amp chips to verify that they are working
 
 ## Info
 
