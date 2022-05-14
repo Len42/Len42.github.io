@@ -4,7 +4,7 @@
 
 [Synth](/Synth/) &mdash; Designs for Eurorack synthesizer modules &mdash; _work in progress_
 
-[Op Amp Tester](/OpAmpTester/) &mdash; Tests op amp chips to verify that they are working
+[Op Amp Tester](https://github.com/Len42/OpAmpTester/) &mdash; Tests op amp chips to verify that they are working
 
 ## Info
 
