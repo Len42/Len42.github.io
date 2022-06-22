@@ -139,16 +139,19 @@ Open a Developer Command Prompt and type `code` to run VS Code.
 _Note:_ VS Code must always be run from a Developer Command Prompt window, otherwise it 
 will not be able to find the build tools.
 
-## CMake Tools Plugin
+## CMake Tools Extensions
 
 In VS Code, click on the "Extensions" button on the left.
 
-Search for the "CMake Tools" plugin and install it.
+Search for these extensions and install both of them:
+* CMake Tools
+* CMake Language Support
 
 Navigate to the CMake Tools settings: Click on the "Manage" button in the bottom-left, then select Settings, then Extensions, then CMake Tools.
 
 Under "Cmake: Configure Environment", click "Add Item" and add an item named 
-`PICO_SDK_PATH` with the value `..\..\pico-sdk`. _Note:_ The absolute pathname of the `pico-sdk` directory may be used here (e.g. `C:\Dev\Pico\pico-sdk`).
+`PICO_SDK_PATH` with the value `..\..\pico-sdk`.  
+_Note:_ The absolute pathname of the `pico-sdk` directory may be used here (e.g. `C:\Dev\Pico\pico-sdk`).
 
 If compiling for a supported RP2040 board other than the Pi Pico, add another item named 
 `PICO_BOARD` with the name of the board. The valid values are the names of the files in 
