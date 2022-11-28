@@ -8,6 +8,8 @@
 
 ## Info
 
+[RP2040 ADC Accuracy](rp2040-adc-accuracy.html) &mdash; Getting the most out of an analog-to-digital converter
+
 [RP2040 Windows Development Setup](rp2040-dev-setup.html) &mdash; How to set up a C/C++ development environment for the Raspberry Pi Pico and other RP2040 dev boards on Windows
 
 ## Utilities
