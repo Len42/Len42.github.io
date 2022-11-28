@@ -4,18 +4,18 @@ How accurate is your ADC (analog to digital converter)? The answer might be, not
 
 ## Background
 
-Here’s the situation: I’m making a digital voice module for [a modular synthesizer](/Synth/), using an Adafruit Feather RP2040 board (similar to a Raspberry Pi Pico) which has an RP2040 microcontroller. I need the microcontroller to read an analog control voltage that represents the pitch of notes to be played. This voltage reading has to be quite accurate because people are sensitive to small pitch inaccuracies.
+Here’s the situation: I’m making a digital voice module for [a modular synthesizer](/Synth/), using an [Adafruit Feather RP2040 board](https://learn.adafruit.com/adafruit-feather-rp2040-pico) (similar to a [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)) which has an [RP2040 microcontroller](https://www.raspberrypi.com/documentation/microcontrollers/rp2040.html). I need the microcontroller to read an analog control voltage that represents the pitch of notes to be played. This voltage reading has to be quite accurate because people are sensitive to small pitch inaccuracies.
 
 The RP2040 has a built-in ADC, which at first glance looks like it should be able to do the job:
 
-- 12-bit resolution – This gives 4096 distinguishable voltage values, which seems just about enough for good pitch tracking over 10 octaves (as long as Jacob Collier isn’t listening).
+- 12-bit resolution – This gives 4096 distinguishable voltage values, which seems just about enough for good pitch tracking over 10 octaves (as long as [Jacob Collier](https://www.facebook.com/JCollierMusic/videos/microtonal-games/1887701781318139/) isn’t listening).
 - Up to 500,000 samples per second – I need to sample the pitch voltage a few thousand times per second, to allow audio-rate modulation, so this is plenty fast enough.
 
 I would prefer to use this built-in ADC rather than using a separate ADC chip.
 
 ## Problems
 
-I wired up a simple prototype with the Feather board, wrote some firmware, hooked it up to my modular synth, and tried playing some music. Unfortunately, the results were not great. Even though I had tried to calibrate the firmware so the notes would be in tune, they mostly weren’t. Some notes on the keyboard played sharp and others were flat. Pitch scaling just wasn’t consistent.
+I wired up a simple prototype with the Feather board, wrote some firmware, hooked it up to my modular synth, and played some music. Unfortunately, the results were not great. Even though I had tried to calibrate the firmware so the notes would be in tune, they mostly weren’t. Some notes on the keyboard played sharp and others were flat. Pitch scaling just wasn’t consistent.
 
 Another problem was that the ADC values jumped around quite a bit, even when the input voltage was steady. There seemed to be quite a bit of noise in either the input voltage or the ADC itself.
 
@@ -25,7 +25,7 @@ The second problem – noisy ADC values – was simple to deal with. I added a s
 
 The other problem – uneven pitch scaling – is caused by systematic inaccuracies in the RP2040’s ADC unit. It looked like this might force me to use an external ADC IC instead, unless I could find a way to even out the ADC response.
 
-The RP2040 datasheet helpfully includes a graph of its ADC’s non-linearity:
+[The RP2040 datasheet](https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf) helpfully includes a graph of its ADC’s non-linearity:
 
 <img src="rp2040-adc-inl.png" width=500px>
 
