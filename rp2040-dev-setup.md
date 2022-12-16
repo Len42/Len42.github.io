@@ -169,7 +169,10 @@ Save and close the settings file.
 
 In VS Code, open the folder `pico_examples`.
 
-If prompted to select a compiler, select the one that has "arm-none-eabi" in its name. If not prompted and if "No kit selected" is shown at the bottom of the window, click on that and select "arm-none-eabi".
+Select the correct compiler to use for builds:
+* If prompted to select a compiler, select the one that has "arm-none-eabi" in its name.
+* If not prompted and if "No kit selected" is shown at the bottom of the window, click on that and select "arm-none-eabi".
+* If the correct "arm-none-eabi" compiler is not listed, click on "Scan for kits" in the list and try again.
 
 Click the "Build" button at the bottom of the window to build the example programs again.
 
