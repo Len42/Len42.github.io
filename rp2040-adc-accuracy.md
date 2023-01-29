@@ -35,6 +35,6 @@ I compensated for this non-linear response in my firmware by mapping the ADC inp
 
 ## Results
 
-After I added filtering and linearization, I was able to adjust the pitch scaling so that it tracks the keyboard pretty accurately. Not perfectly, but close enough for rock & roll. I’m seeing some weird ADC-related glitches but I think it’s a completely different problem which I haven’t figured out yet.
+After I added filtering and linearization, I was able to adjust the pitch scaling so that it tracks the keyboard pretty accurately. Not perfectly, but close enough for rock & roll.
 
 Even after these adjustments, the RP2040’s built-in ADC is barely up to the task. An external 14-bit ADC would work better, but I haven’t found one that is accurate, fast, not too expensive, and in a package that I can deal with. For now I’m sticking with the built-in ADC.
