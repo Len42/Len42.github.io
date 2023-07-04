@@ -85,7 +85,7 @@ Clone the Pico SDK and example code into a local git repo:
         Or, if an SSL private key has been configured:
         git clone -b master git@github.com:raspberrypi/pico-sdk.git
     cd pico-sdk
-    git submodule update -init
+    git submodule update --init
     cd ..
     git clone -b master https://github.com/raspberrypi/pico-examples.git
         Or, if an SSL private key has been configured:
