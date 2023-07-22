@@ -4,14 +4,15 @@ How accurate is your ADC (analog to digital converter)? The answer might be, not
 
 ## Background
 
-Here’s the situation: I’m making a digital voice module for [a modular synthesizer](/Synth/), using an [Adafruit Feather RP2040 board](https://learn.adafruit.com/adafruit-feather-rp2040-pico) (similar to a [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)) which has an [RP2040 microcontroller](https://www.raspberrypi.com/documentation/microcontrollers/rp2040.html). I need the microcontroller to read an analog control voltage that represents the pitch of notes to be played. This voltage reading has to be quite accurate because people are sensitive to small pitch inaccuracies.
+Here’s the situation: I’m making a digital voice module for [a modular synthesizer](/Synth/), using an [Adafruit Feather RP2040 board](https://learn.adafruit.com/adafruit-feather-rp2040-pico) (similar to a [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)) which has an [RP2040 microcontroller](https://www.raspberrypi.com/documentation/microcontrollers/rp2040.html). I need the microcontroller to read an analog control voltage that represents the pitch of notes to be played. This voltage reading has to be quite accurate because people's ears are sensitive to small
+pitch inaccuracies.
 
 The RP2040 has a built-in ADC, which at first glance looks like it should be able to do the job:
 
 - 12-bit resolution – This gives 4096 distinguishable voltage values, which seems just about enough for good pitch tracking over 10 octaves (as long as [Jacob Collier](https://www.facebook.com/JCollierMusic/videos/microtonal-games/1887701781318139/) isn’t listening).
 - Up to 500,000 samples per second – I need to sample the pitch voltage a few thousand times per second, to allow audio-rate modulation, so this is plenty fast enough.
 
-I would prefer to use this built-in ADC rather than using a separate ADC chip.
+I would prefer to use this built-in ADC rather than a separate ADC chip.
 
 ## Problems
 
@@ -29,7 +30,7 @@ The other problem – uneven pitch scaling – is caused by systematic inaccurac
 
 <img src="rp2040-adc-inl.png" width=500px>
 
-(Any ADC datasheet will have a similar graph of “integral non-linearity” or “INL”.) This graph clearly shows that the ADC’s behaviour is non-linear, but it seems to be pretty well defined.
+(Any ADC datasheet will have a similar graph of “integral non-linearity” or “INL”.) This graph shows that the ADC’s behaviour is very non-linear, but it seems to be pretty well defined.
 
 I compensated for this non-linear response in my firmware by mapping the ADC input value to the theoretically correct value. The mapping is a linear function with discontinuous jumps at specific values, based on the above graph. I implemented this mapping with a lookup table for efficiency, because the microcontroller is sampling the input voltage thousands of times per second while also performing other tasks.
 
